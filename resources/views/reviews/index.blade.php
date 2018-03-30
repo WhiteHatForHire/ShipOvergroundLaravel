@@ -44,22 +44,24 @@
             <div class="modal-content">
               <h4>{{$review->title}}</h4>
               <p>{{$review->body}}</p>
-              <h5>Quality: {{$review->qualityScore}}</h5>
-              @for($i = 0; $i < $review->qualityScore; $i++)
-              <i class="fas fa-star"></i>
-              @endfor
-              <h5>Personality: {{$review->personalityScore}}</h5>
-                @for($i = 0; $i < $review->personalityScore; $i++)
-                  <i class="fas fa-star"></i>
+              <div class="center-align">
+                <h5>Quality: {{$review->qualityScore}}</h5>
+                @for($i = 0; $i < $review->qualityScore; $i++)
+                <i class="fas fa-star"></i>
                 @endfor
-              <h5>Professionalism: {{$review->professionalismScore}}</h5>
-                @for($i = 0; $i < $review->professionalismScore; $i++)
-                  <i class="fas fa-star"></i>
-                @endfor
-              <h5>Overall: {{$review->overallScore}}</h5>
-                @for($i = 0; $i < $review->overallScore; $i++)
-                  <i class="fas fa-star"></i>
-                @endfor
+                <h5>Personality: {{$review->personalityScore}}</h5>
+                  @for($i = 0; $i < $review->personalityScore; $i++)
+                    <i class="fas fa-star"></i>
+                  @endfor
+                <h5>Professionalism: {{$review->professionalismScore}}</h5>
+                  @for($i = 0; $i < $review->professionalismScore; $i++)
+                    <i class="fas fa-star"></i>
+                  @endfor
+                <h5>Overall: {{$review->overallScore}}</h5>
+                  @for($i = 0; $i < $review->overallScore; $i++)
+                    <i class="fas fa-star"></i>
+                  @endfor
+                </div>
             </div>
             
             <div class="modal-footer">
