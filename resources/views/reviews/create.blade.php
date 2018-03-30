@@ -2,60 +2,65 @@
 @section('content')
 <div class="container">
 	<div class="row">
-		<div class="col-lg-6 col-lg-offset-3">
+		<div class="col l8 push-l2 m12 grey lighten-4 z-depth-1 ">
 				<h1>Create Review</h1>
 				{!! Form::open(['action' => 'ReviewsController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
-				<div class="form-group">
-					<label for="title">Title</label>
-					<input type="text" name="title" class="form-control" placeholder="Title">
+				<div class="input-field col s12">
+					<i class="material-icons prefix">create</i>
+          <input id="title" type="text" name="title">
+          <label for="title">Title</label>
 				</div>
-				<div class="form-group">
-					<label for="body">Body</label>
-					<textarea id="article-ckeditor" class="form-control" name="body" cols="30" rows="10" placeholder="Body Text"></textarea>
-				</div>
+				<div class="input-field col s12">
+						<i class="material-icons prefix">chat</i>
+						<textarea id="body" name="body" class="materialize-textarea"></textarea>
+						<label for="body">Review Content</label>
+					</div>
+				<div class="section"></div>
+				<div class="section"></div>
 				
 				{{--  RADIOS  --}}
-				<h2>Quality Score</h2>
-				<label class="radio-inline"><input type="radio" name="qualityScore" id="" value="1">1</label>
-				<label class="radio-inline"><input type="radio" name="qualityScore" id="" value="2">2</label>
-				<label class="radio-inline"><input type="radio" name="qualityScore" id="" value="3">3</label>
-				<label class="radio-inline"><input type="radio" name="qualityScore" id="" value="4">4</label>
-				<label class="radio-inline"><input type="radio" name="qualityScore" id="" value="5">5</label>
-				<label class="radio-inline"><input type="radio" name="qualityScore" id="" value="6">6</label>
-				<label class="radio-inline"><input type="radio" name="qualityScore" id="" value="7">7</label>
-				<label class="radio-inline"><input type="radio" name="qualityScore" id="" value="8">8</label>
-				<label class="radio-inline"><input type="radio" name="qualityScore" id="" value="9">9</label>
-				<label class="radio-inline"><input type="radio" name="qualityScore" id="" value="10">10</label>
+				<div class="center-align">
+				<h4>Quality</h2>
+				<label><input type="radio" name="qualityScore" value="1"><span>1</span></label>
+				<label><input type="radio" name="qualityScore" value="2"><span>2</span></label>
+				<label><input type="radio" name="qualityScore" value="3"><span>3</span></label>
+				<label><input type="radio" name="qualityScore" value="4"><span>4</span></label>
+				<label><input type="radio" name="qualityScore" value="5"><span>5</span></label>
+				<label><input type="radio" name="qualityScore" value="6"><span>6</span></label>
+				<label><input type="radio" name="qualityScore" value="7"><span>7</span></label>
+				<label><input type="radio" name="qualityScore" value="8"><span>8</span></label>
+				<label><input type="radio" name="qualityScore" value="9"><span>9</span></label>
+				<label><input type="radio" name="qualityScore" value="10"><span>10</span></label>
 				
-				<h2>Personality</h2>
-				<label class="radio-inline"><input type="radio" name="personalityScore" id="" value="1">1</label>
-				<label class="radio-inline"><input type="radio" name="personalityScore" id="" value="2">2</label>
-				<label class="radio-inline"><input type="radio" name="personalityScore" id="" value="3">3</label>
-				<label class="radio-inline"><input type="radio" name="personalityScore" id="" value="4">4</label>
-				<label class="radio-inline"><input type="radio" name="personalityScore" id="" value="5">5</label>
-				<label class="radio-inline"><input type="radio" name="personalityScore" id="" value="6">6</label>
-				<label class="radio-inline"><input type="radio" name="personalityScore" id="" value="7">7</label>
-				<label class="radio-inline"><input type="radio" name="personalityScore" id="" value="8">8</label>
-				<label class="radio-inline"><input type="radio" name="personalityScore" id="" value="9">9</label>
-				<label class="radio-inline"><input type="radio" name="personalityScore" id="" value="10">10</label>
+				<h4>Personality</h2>
+				<label><input type="radio" name="personalityScore" value="1"><span>1</span></label>
+				<label><input type="radio" name="personalityScore" value="2"><span>2</span></label>
+				<label><input type="radio" name="personalityScore" value="3"><span>3</span></label>
+				<label><input type="radio" name="personalityScore" value="4"><span>4</span></label>
+				<label><input type="radio" name="personalityScore" value="5"><span>5</span></label>
+				<label><input type="radio" name="personalityScore" value="6"><span>6</span></label>
+				<label><input type="radio" name="personalityScore" value="7"><span>7</span></label>
+				<label><input type="radio" name="personalityScore" value="8"><span>8</span></label>
+				<label><input type="radio" name="personalityScore" value="9"><span>9</span></label>
+				<label><input type="radio" name="personalityScore" value="10"><span>10</span></label>
 				
 				
-				<h2>Professionalism</h2>
-				<label class="radio-inline"><input type="radio" name="professionalismScore" id="" value="1">1</label>
-				<label class="radio-inline"><input type="radio" name="professionalismScore" id="" value="2">2</label>
-				<label class="radio-inline"><input type="radio" name="professionalismScore" id="" value="3">3</label>
-				<label class="radio-inline"><input type="radio" name="professionalismScore" id="" value="4">4</label>
-				<label class="radio-inline"><input type="radio" name="professionalismScore" id="" value="5">5</label>
-				<label class="radio-inline"><input type="radio" name="professionalismScore" id="" value="6">6</label>
-				<label class="radio-inline"><input type="radio" name="professionalismScore" id="" value="7">7</label>
-				<label class="radio-inline"><input type="radio" name="professionalismScore" id="" value="8">8</label>
-				<label class="radio-inline"><input type="radio" name="professionalismScore" id="" value="9">9</label>
-				<label class="radio-inline"><input type="radio" name="professionalismScore" id="" value="10">10</label>
-				
+				<h4>Professionalism</h2>
+				<label><input type="radio" name="professionalismScore" value="1"><span>1</span></label>
+				<label><input type="radio" name="professionalismScore" value="2"><span>2</span></label>
+				<label><input type="radio" name="professionalismScore" value="3"><span>3</span></label>
+				<label><input type="radio" name="professionalismScore" value="4"><span>4</span></label>
+				<label><input type="radio" name="professionalismScore" value="5"><span>5</span></label>
+				<label><input type="radio" name="professionalismScore" value="6"><span>6</span></label>
+				<label><input type="radio" name="professionalismScore" value="7"><span>7</span></label>
+				<label><input type="radio" name="professionalismScore" value="8"><span>8</span></label>
+				<label><input type="radio" name="professionalismScore" value="9"><span>9</span></label>
+				<label><input type="radio" name="professionalismScore" value="10"><span>10</span></label>
 				{{--  SUBMIT  --}}
-				<br><br>
+				<div class="section"></div>
 				<button class="btn btn-primary" type="submit">Submit</button> 
-				<br>
+				<div class="section"></div>
+				</div>
 				{!! Form::close() !!}
 		</div>
 	</div>
