@@ -1,5 +1,6 @@
 @extends('layouts.app') 
 @section('content')
+<div class="section"></div>
 <div class="container">
 	<div class="row">
 		<div class="col l8 push-l2 m12 grey lighten-4 z-depth-1 ">

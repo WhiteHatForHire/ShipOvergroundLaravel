@@ -1,5 +1,5 @@
 console.log('working');
-
+M.AutoInit();
 $(document).ready(function(){
   $('textarea#body, input#title').characterCounter();
 });
@@ -13,8 +13,8 @@ setTimeout(function() {
   }, 3000
 );
 
-$('.grid').masonry({
-  // options
-  itemSelector: '.grid-item',
-  columnWidth: 200
-});
+// $('.grid').masonry({
+//   // options
+//   itemSelector: '.grid-item',
+//   columnWidth: 200
+// });
