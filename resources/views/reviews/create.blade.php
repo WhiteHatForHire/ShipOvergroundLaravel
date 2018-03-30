@@ -7,7 +7,7 @@
 				{!! Form::open(['action' => 'ReviewsController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
 				<div class="input-field col s12">
 					<i class="material-icons prefix">create</i>
-          <input id="title" type="text" name="title">
+          <input id="title" type="text" name="title" maxlength="30" data-length="30">
           <label for="title">Title</label>
 				</div>
 				<div class="input-field col s12">

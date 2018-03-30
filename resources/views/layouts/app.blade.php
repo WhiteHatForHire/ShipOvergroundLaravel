@@ -24,6 +24,7 @@
   </div>
 
   <!-- Scripts -->
+  {{--  <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.1/masonry.pkgd.min.js"></script>  --}}
   <script src="{{ asset('js/app.js') }}"></script>
   <script src="{{ asset('js/custom.js') }}"></script>
   <!-- Compiled and minified JavaScript -->

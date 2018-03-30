@@ -12,3 +12,9 @@ setTimeout(function() {
   $('#fade_out_section').fadeOut('slow');
   }, 3000
 );
+
+$('.grid').masonry({
+  // options
+  itemSelector: '.grid-item',
+  columnWidth: 200
+});
