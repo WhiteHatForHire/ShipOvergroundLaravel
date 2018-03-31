@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 // Bring in the namespaces from Post.php
 use App\Review;
+
 // Optional DB library
 use DB;
 
@@ -61,6 +62,7 @@ class ReviewsController extends Controller
         $review->qualityScore = $qualityScore;
         $review->personalityScore = $personalityScore;
         $review->professionalismScore = $professionalismScore;
+        $review->user_id = auth()->user()->id;
         $review->overallScore = ($qualityScore + $personalityScore + $professionalismScore) / 3;
         // $review->user_id = auth()->user()->id;
         $review->save();

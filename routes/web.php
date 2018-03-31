@@ -12,6 +12,10 @@
 */
 
 Route::get('/', 'PagesController@index');
-Route::get('/reviews', 'ReviewsController@index');
-Route::get('/create', 'ReviewsController@create');
-Route::post('/store', 'ReviewsController@store');
+
+// Link to reviews controller
+Route::resource('reviews', 'ReviewsController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

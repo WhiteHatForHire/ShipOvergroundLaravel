@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class Review extends Model
 {
      // Table Name (default is plural of class name aka Post = posts)

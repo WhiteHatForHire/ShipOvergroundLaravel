@@ -7,7 +7,9 @@
       </div>
     </div>
   </div>
+  
   {{--  @foreach($reviews as $review)
+
 
   @endforeach    --}}
   {{--  <div class="container">  --}}
@@ -18,13 +20,13 @@
       <a class="modal-trigger" href="#modal_review{{$review->id}}">
           <div class="col">
               @if($review->overallScore >= 7)
-                <div class="card green darken-2">
+                <div class="card hoverable green darken-2">
                 <div class="card-content white-text">
               @elseif($review->overallScore >= 4 && $review->overallScore <= 6 )
-                <div class="card lime accent-2">
+                <div class="card hoverable lime accent-2">
                 <div class="card-content black-text">
               @elseif($review->overallScore < 4)
-                <div class="card red darken-2">
+                <div class="card hoverable red darken-2">
                 <div class="card-content white-text">
               @endif 
                 <h6>

@@ -15,6 +15,7 @@ class CreateReviewsTable extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id');
             $table->char('title', 150);
             $table->text('body');
             $table->float('overallScore', 3, 2);
