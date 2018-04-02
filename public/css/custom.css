@@ -1,0 +1,19 @@
+#title {
+    font-size: 32px !important;
+}
+
+#body {
+    font-size: 20px !important;
+}
+
+.alert_card {
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+    font-size: 20px;
+}
+
+/* .grid-item { width: 200px; } */
+
+#reviews_grid {
+    margin-left: 20px;
+}
