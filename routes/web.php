@@ -15,6 +15,7 @@ Route::get('/', 'PagesController@index');
 
 // Link to reviews controller
 Route::resource('reviews', 'ReviewsController');
+Route::resource('professors', 'ProfessorsController');
 
 Auth::routes();
 

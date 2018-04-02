@@ -3,7 +3,7 @@
     
         @if (Auth::check())
         
-        <div class="jumbotron text-center">
+        <div class="container">
                 <h1>Welcome, {{$name}}!</h1>
                 <p>View the blog or your posts!</p>
                 <p><a href="/posts" class="btn btn-primary btn-lg" role="button">Blog</a> <a href="/dashboard" role="button" class="btn btn-success btn-lg">My Posts</a></p>

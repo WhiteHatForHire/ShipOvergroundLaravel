@@ -18,6 +18,7 @@
       <li><a href="/">Home</a></li>
       <li><a href="/reviews">Reviews</a></li>
       <li><a href="/reviews/create">Create</a></li>
+      <li><a href="/professors">Professors</a></li>
       <li><a onclick="event.preventDefault(); document.getElementById('logout-form').submit();" href="{{route('logout')}}">Logout</a></li>
     </ul>
   </div>
@@ -26,6 +27,7 @@
 <ul class="sidenav" id="mobile-demo">
   <li><a href="/reviews">Reviews</a></li>
   <li><a href="/create">Create</a></li>
+  <li><a href="/professors">Professors</a></li>
   <li><a onclick="event.preventDefault(); document.getElementById('logout-form').submit();" href="{{route('logout')}}">Logout</a></li>
 </ul>
 

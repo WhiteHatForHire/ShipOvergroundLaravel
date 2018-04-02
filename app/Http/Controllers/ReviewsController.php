@@ -62,7 +62,7 @@ class ReviewsController extends Controller
         $review->qualityScore = $qualityScore;
         $review->personalityScore = $personalityScore;
         $review->professionalismScore = $professionalismScore;
-        $review->user_id = auth()->user()->id;
+        $review->userId = auth()->user()->id;
         $review->overallScore = ($qualityScore + $personalityScore + $professionalismScore) / 3;
         // $review->user_id = auth()->user()->id;
         $review->save();
