@@ -19,8 +19,8 @@
           <div class="card hoverable">
             <div class="card-content">
               <p>
-                {{$professor->firstName}} {{$professor->lastName}} <br>
-                {{$professor->professorEmail}} <br>
+                {{$professor->first_name}} {{$professor->last_name}} <br>
+                {{$professor->professor_email}} <br>
                 {{$professor->department}}
                 
               </p>                

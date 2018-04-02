@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 // Bring in the namespaces from Post.php
 use App\Review;
+use App\Professor;
 
 // Optional DB library
 use DB;
@@ -29,9 +30,10 @@ class ReviewsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        return view('reviews.create');
+        $professor = Professor::find($id);
+        return view('reviews.create')->with('professor', $professor);
     }
 
     /**
@@ -46,25 +48,25 @@ class ReviewsController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'body' => 'required',
-            'qualityScore' => 'required',
-            'personalityScore' => 'required',
-            'professionalismScore' => 'required',
+            'quality_score' => 'required',
+            'personality_score' => 'required',
+            'professionalism_score' => 'required',
         ]);
 
         // Create Review
         $review = new Review;
-        $qualityScore = $request->input('qualityScore');
-        $personalityScore = $request->input('personalityScore');
-        $professionalismScore = $request->input('professionalismScore');
+        $quality_score = $request->input('quality_score');
+        $personality_score = $request->input('personality_score');
+        $professionalism_score = $request->input('professionalism_score');
         $qualityScore = $request->input('qualityScore');
         $review->title = $request->input('title');
         $review->body = $request->input('body');
-        $review->qualityScore = $qualityScore;
-        $review->personalityScore = $personalityScore;
-        $review->professionalismScore = $professionalismScore;
-        $review->userId = auth()->user()->id;
-        $review->overallScore = ($qualityScore + $personalityScore + $professionalismScore) / 3;
-        // $review->user_id = auth()->user()->id;
+        $review->quality_score = $quality_score;
+        $review->personality_score = $personality_score;
+        $review->professionalism_score = $professionalism_score;
+        $review->user_id = auth()->user()->id;
+        $review->overall_score = ($quality_score + $personality_score + $professionalism_score) / 3;
+        $review->professor_id = $request->input('professor_id');
         $review->save();
 
         return redirect('/reviews')->with('success', 'Review Created');

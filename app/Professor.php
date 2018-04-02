@@ -13,4 +13,7 @@ class Professor extends Model
     // Timestamps (default is true)
     public $timestamps = true;
     
+    public function reviews(){
+        return $this->hasMany('App\Review');
+    }
 }

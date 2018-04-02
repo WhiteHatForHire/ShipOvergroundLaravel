@@ -25,16 +25,16 @@ class ProfessorsController extends Controller
     {
         // return view ('reviews.create');
         $this->validate($request, [
-            'firstName' => 'required',
-            'lastName' => 'required',
-            'professorEmail' => 'required'
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'professor_email' => 'required'
         ]);
 
         // Create Review
         $professor = new Professor;
-        $professor->firstName = $request->input('firstName');
-        $professor->lastName = $request->input('lastName');
-        $professor->professorEmail = $request->input('professorEmail');
+        $professor->first_name = $request->input('first_name');
+        $professor->last_name = $request->input('last_name');
+        $professor->professor_email = $request->input('professor_email');
         $professor->department = $request->input('department');
         $professor->save();
 
@@ -59,7 +59,8 @@ class ProfessorsController extends Controller
      */
     public function show($id)
     {
-        //
+        $professor = Professor::find($id);
+        return view('professors.show')->with('professor', $professor);
     }
 
     /**
@@ -95,4 +96,8 @@ class ProfessorsController extends Controller
     {
         //
     }
+
+   
+    
+
 }

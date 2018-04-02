@@ -9,7 +9,7 @@
                 {{ csrf_field() }}
                 <div class="input-field col s12{{ $errors->has('name') ? ' has-error' : '' }}">
                   <input id="name" type="text" class="validate" name="name" value="{{ old('name') }}" required>
-                  <label for="name">Name</label>
+                  <label for="name">Alias</label>
                     @if ($errors->has('name'))
                         <span class="red-text">
                             <strong>{{ $errors->first('name') }}</strong>

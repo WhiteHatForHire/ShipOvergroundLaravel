@@ -8,19 +8,19 @@
 				{!! Form::open(['action' => 'ProfessorsController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
 				<div class="input-field col l6 s12">
 					<i class="material-icons prefix">create</i>
-          <input id="firstName" type="text" name="firstName" maxlength="30" data-length="30">
-          <label for="firstName">First Name</label>
+          <input id="first_name" type="text" name="first_name" maxlength="30" data-length="30">
+          <label for="first_name">First Name</label>
 				</div>
 				<div class="input-field col l6 s12">
 					<i class="material-icons prefix">create</i>
-          <input id="lastName" type="text" name="lastName" maxlength="30" data-length="30">
-          <label for="lastName">Last Name</label>
+          <input id="last_name" type="text" name="last_name" maxlength="30" data-length="30">
+          <label for="last_name">Last Name</label>
         </div>
         
 				<div class="input-field col l6 s12">
 					<i class="material-icons prefix">create</i>
-          <input id="professorEmail" type="text" name="professorEmail" maxlength="30" data-length="30">
-          <label for="professorEmail">Professor Email</label>
+          <input id="professor_email" type="text" name="professor_email" maxlength="30" data-length="30">
+          <label for="professor_email">Professor Email</label>
 				</div>
 				<div class="input-field col l6 s12">
 					<i class="material-icons prefix">create</i>

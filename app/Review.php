@@ -14,7 +14,13 @@ class Review extends Model
      // Timestamps (default is true)
      public $timestamps = true;
 
-     public function user() {
+    public function user() {
         return $this->belongsTo('App\User');
     }
+
+    public function professor() {
+        return $this->belongsTo('App\Professor');
+    }
+
+    
 }

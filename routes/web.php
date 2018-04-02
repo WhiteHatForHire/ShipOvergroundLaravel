@@ -17,6 +17,10 @@ Route::get('/', 'PagesController@index');
 Route::resource('reviews', 'ReviewsController');
 Route::resource('professors', 'ProfessorsController');
 
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('reviews/create/{id}', 'ReviewsController@create');
+Route::get('/autocomplete', 'PagesController@autocomplete');
+
