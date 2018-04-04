@@ -8,6 +8,8 @@
                 <p>View the blog or your posts!</p>
                 <p><a href="/posts" class="btn btn-primary btn-lg" role="button">Blog</a> <a href="/dashboard" role="button" class="btn btn-success btn-lg">My Posts</a></p>
         </div>
+
+        {{-- IF NOT LOGGED IN --}}
         @else
         <div class="section"></div>
         <div class="row">
@@ -19,9 +21,20 @@
                   <a href="/login" class="hoverable waves-effect waves-light btn green"><i class="material-icons left">face</i>Login</a>
                   <a href="/register" class="hoverable waves-effect waves-light btn purple"><i class="material-icons left">group_add</i>Register</a>
                   <div class="section"></div>
+                  
                 </div>
               </div>
             </div>
           </div>
+          <div class="section"></div>
+          <div class="section"></div>
+          <div class="section"></div>
+          <div class="section"></div>
+          <div class="section"></div>
+          <div class="section"></div>
+          <div class="section"></div>
+          <div class="section"></div>
+          <div class="section"></div>
+          <div class="section"></div>
         @endif
 @endsection

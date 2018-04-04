@@ -21,6 +21,7 @@
         @include('partials.messages')
       </div>
       @yield('content')
+      {{-- @include('partials.footer') --}}
     </div>
     
     <!-- Scripts -->
