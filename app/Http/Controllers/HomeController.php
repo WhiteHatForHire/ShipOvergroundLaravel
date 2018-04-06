@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Review;
+use App\Professor;
 
 class HomeController extends Controller
 {
@@ -24,8 +26,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $user_id = auth()->user()->id;
+        $user_id = Auth()->user()->id;
         $user = User::find($user_id);
-        return view('pages.index')->with('name', $user->name);
+        $reviews = Review::get();
+        return view('pages.index')->with('user', $user)
+        ->with('reviews', $reviews);
     }
 }

@@ -10,6 +10,20 @@
   </nav>
 </div>  --}}
 @if (Auth::check())
+<!-- Dropdown Structure -->
+<ul id='dropdown1' class='dropdown-content'>
+    <li class="divider" tabindex="-1"></li>
+    <li class="divider" tabindex="-1"></li>
+    <li class="divider" tabindex="-1"></li>
+    <li class="divider" tabindex="-1"></li>
+    <li class="divider" tabindex="-1"></li>
+    <li class="divider" tabindex="-1"></li>
+    <li class="divider" tabindex="-1"></li>
+    <li class="divider" tabindex="-1"></li>
+    <li class="divider" tabindex="-1"></li>
+    <li><a href="/">Profile</a></li>
+    <li><a onclick="event.preventDefault(); document.getElementById('logout-form').submit();" href="{{route('logout')}}">Logout</a></li>
+  </ul>
 <nav>
   <div class="nav-wrapper">
     <div class="row">
@@ -19,7 +33,8 @@
           <li><a href="/autocomplete">Search</a></li>
           <li><a href="/reviews">Reviews</a></li>
           <li><a href="/professors">Professors</a></li>
-          <li><a onclick="event.preventDefault(); document.getElementById('logout-form').submit();" href="{{route('logout')}}">Logout</a></li>
+           <!-- Dropdown Trigger -->
+      <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Account<i class="material-icons right">arrow_drop_down</i></a></li>
         </ul>
     </div>
    

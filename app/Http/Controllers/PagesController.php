@@ -13,8 +13,9 @@ class PagesController extends Controller
         if (Auth()->user()){
             $user_id = Auth()->user()->id;
             $user = User::find($user_id);
-            // return view('pages.index', compact('title'));
-            return view('pages.index')->with('name', $user->name);
+            $reviews = Review::get();
+            return view('pages.index')->with('user', $user)
+            ->with('reviews', $reviews);
         } else {
             return view('pages.index');
         }
@@ -24,4 +25,5 @@ class PagesController extends Controller
         $professors = Professor::orderBy('last_name', 'desc')->get();
         return view('pages.autocomplete')->with('professors', $professors);
     }
+
 }
