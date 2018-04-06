@@ -83,10 +83,10 @@ class ProfessorsController extends Controller
             return;
         }
         
-        $overallScore = averageScores($overallScore,'overall_score', $id);
-        $personalityScore = averageScores($personalityScore,'personality_score', $id);
-        $professionalismScore = averageScores($professionalismScore,'professionalism_score', $id);
-        $qualityScore = averageScores($qualityScore,'quality_score', $id);
+        $overallScore = round(averageScores($overallScore,'overall_score', $id), 1);
+        $personalityScore = round(averageScores($personalityScore,'personality_score', $id), 1);
+        $professionalismScore = round(averageScores($professionalismScore,'professionalism_score', $id), 1);
+        $qualityScore = round(averageScores($qualityScore,'quality_score', $id), 1);
         
         return view('professors.show')
         ->with('professor', $professor)

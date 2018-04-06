@@ -25,12 +25,14 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 $factory->define(App\Review::class, function (Faker\Generator $faker) {
     return [
         'quality_score' => $faker->name,
+        'user_id' => 2,
+        'professor_id' => 2,
         'personality_score' => $faker->numberBetween($min = 1, $max = 10),
         'professionalism_score' => $faker->numberBetween($min = 1, $max = 10),
         'quality_score' => $faker->numberBetween($min = 1, $max = 10),
         'body'=> $faker->paragraph($nbSentences = 3, $variableNbSentences = true),
         'title'=> $faker->word,
-        'overallScore'=> rand (1, 10),
+        'overall_Score'=> rand (1, 10),
     ];
 });
 

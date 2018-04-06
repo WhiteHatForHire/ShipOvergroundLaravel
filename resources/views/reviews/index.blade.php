@@ -1,13 +1,6 @@
 @extends('layouts.app') 
 @section('content')
-  <div class="container">
-    <div class="row">
-      <div class="col l6">
-        <h1>REVIEWS</h1>
-      </div>
-    </div>
-  </div>
-  
+        <h1 class="center-align">REVIEWS</h1>
   {{--  @foreach($reviews as $review)
 
 
@@ -18,7 +11,7 @@
         {{--  materialize cards  --}}
         <!-- Modal Trigger -->
       <a class="modal-trigger" href="#modal_review{{$review->id}}">
-          <div class="col">
+          <div class="col s12 m6 l3">
               @if($review->overall_score >= 7)
                 <div class="card hoverable green darken-2">
                 <div class="card-content white-text">

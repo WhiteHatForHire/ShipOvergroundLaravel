@@ -12,8 +12,22 @@
     font-size: 20px;
 }
 
-/* .grid-item { width: 200px; } */
-
-#reviews_grid {
-    margin-left: 20px;
+@media screen and (max-width: 1300px) {
+    .fa-star {
+        font-size: 10px;
+    }
 }
+
+@media screen and (max-width: 992px) {
+    .fa-star {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .fa-star {
+        font-size: 20px;
+    }
+}
+
+ 
