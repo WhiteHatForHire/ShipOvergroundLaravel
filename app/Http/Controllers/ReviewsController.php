@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 // Include Storage Library
 use Illuminate\Support\Facades\Storage;
-// Bring in the namespaces from Post.php
+// Bring in the models from Post.php
 use App\Review;
 use App\Professor;
 
@@ -33,7 +33,8 @@ class ReviewsController extends Controller
     public function create($id)
     {
         $professor = Professor::find($id);
-        return view('reviews.create')->with('professor', $professor);
+        $professors = Professor::get();
+        return view('reviews.create')->with('professor', $professor)->with('professors', $professors);
     }
 
     /**

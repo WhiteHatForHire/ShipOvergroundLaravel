@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="section"></div>
 <div class="row">
     <div class="col s12 m10 l8 offset-m1 offset-l2">
         <span class="flow-text">Register</span>
@@ -58,4 +59,8 @@
                 </form>
             </div>
     </div>
+    <div class="section"></div>
+    <div class="section"></div>
+    <div class="section"></div>
+    
 @endsection

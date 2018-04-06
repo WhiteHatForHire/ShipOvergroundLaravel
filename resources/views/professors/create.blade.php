@@ -9,7 +9,7 @@
 				<div class="input-field col l6 s12">
 					<i class="material-icons prefix">create</i>
           <input id="first_name" type="text" name="first_name" maxlength="30" data-length="30">
-          <label for="first_name">First Name</label>
+					<label for="first_name">First Name</label>
 				</div>
 				<div class="input-field col l6 s12">
 					<i class="material-icons prefix">create</i>
@@ -41,5 +41,8 @@
 	</div>
 	
 </div>
+<div class="section"></div>
+<div class="section"></div>
+
 @endsection
 {{--  label.radio-inline*10>input:radio[name=qualityScore][value=$]{$}  --}}

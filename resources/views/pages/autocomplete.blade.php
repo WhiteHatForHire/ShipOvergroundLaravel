@@ -1,7 +1,5 @@
 @extends('layouts.app')
-<?php
-// $
-?>
+
 @section('content')
 <div class="section"></div>
 <div class="container">
@@ -22,6 +20,17 @@
     </div>
   </div>
 </div>
+<div class="section"></div>
+<div class="section"></div>
+<div class="section"></div>
+<div class="section"></div>
+<div class="section"></div>
+<div class="section"></div>
+<div class="section"></div>
+<div class="section"></div>
+<div class="section"></div>
+<div class="section"></div>
+<div class="section"></div>
 
 
 <script type="text/javascript">

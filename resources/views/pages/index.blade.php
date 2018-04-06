@@ -26,15 +26,18 @@
               </div>
             </div>
           </div>
-          <div class="section"></div>
-          <div class="section"></div>
-          <div class="section"></div>
-          <div class="section"></div>
-          <div class="section"></div>
-          <div class="section"></div>
-          <div class="section"></div>
-          <div class="section"></div>
-          <div class="section"></div>
-          <div class="section"></div>
+          
         @endif
+        <div class="section"></div>
+        <div class="section"></div>
+        <div class="section"></div>
+        <div class="section"></div>
+        <div class="section"></div>
+        <div class="section"></div>
+        <div class="section"></div>
+        <div class="section"></div>
+        <div class="section"></div>
+        <div class="section"></div>
+        <div class="section"></div>
+        
 @endsection
