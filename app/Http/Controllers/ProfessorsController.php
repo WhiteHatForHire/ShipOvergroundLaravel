@@ -63,10 +63,7 @@ class ProfessorsController extends Controller
         // Find the average scores for the professor
         $professor = Professor::find($id);
         $reviews = Review::get();
-        $aveScore = $qualityScore = null;
-        $overallScore = 0;
-        $personalityScore = 0;
-        $professionalismScore = 0;
+        $aveScore = $professionalismScore = $qualityScore = $overallScore = $personalityScore = null;
 
         // Custom function to find average scores
         function averageScores($score, $referenced, $id) {
@@ -79,10 +76,13 @@ class ProfessorsController extends Controller
                     $count += 1;
                 }
             }
-            $score = $score / $count;
-            return $score;
+            if ($score > 0) {
+                $score = $score / $count;
+                return $score;
+            } 
+            return;
         }
-
+        
         $overallScore = averageScores($overallScore,'overall_score', $id);
         $personalityScore = averageScores($personalityScore,'personality_score', $id);
         $professionalismScore = averageScores($professionalismScore,'professionalism_score', $id);
@@ -91,7 +91,8 @@ class ProfessorsController extends Controller
         return view('professors.show')
         ->with('professor', $professor)
         ->with('reviews', $reviews)
-        ->with('overallScore', $overallScore)->with('personalityScore', $personalityScore)
+        ->with('overallScore', $overallScore)
+        ->with('personalityScore', $personalityScore)
         ->with('professionalismScore', $professionalismScore)
         ->with('qualityScore', $qualityScore);
     }

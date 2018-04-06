@@ -19,7 +19,7 @@ class CreateReviewsTable extends Migration
             $table->integer('professor_id');
             $table->char('title', 150);
             $table->text('body');
-            $table->float('overall_score', 3, 2);
+            $table->float('overall_score', 4, 2);
             $table->integer('quality_score');
             $table->integer('personality_score');
             $table->integer('professionalism_score');
