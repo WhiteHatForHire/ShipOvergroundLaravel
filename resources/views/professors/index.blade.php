@@ -15,18 +15,19 @@
   {{--  <div class="container">  --}}
       <div class="row">
         @foreach($professors as $professor)
-        <div class="col 12">
-          <div class="card hoverable">
-            <div class="card-content">
-              <p>
-                {{$professor->first_name}} {{$professor->last_name}} <br>
-                {{$professor->professor_email}} <br>
-                {{$professor->department}}
-                
-              </p>                
+        <a class="black-text" href="/professors/{{$professor->id}}">
+          <div class="col 12">
+            <div class="card hoverable">
+              <div class="card-content">
+                <p>
+                  {{$professor->first_name}} {{$professor->last_name}} <br>
+                  {{$professor->professor_email}} <br>
+                  {{$professor->department}} <br>
+                </p>                
+              </div>
             </div>
           </div>
-        </div>
+        </a>
         @endforeach
       </div>
   {{--  </div>  --}}

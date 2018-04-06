@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 // Optional DB library
 use DB;
+use App\Review;
 use App\Professor;
 
 
@@ -59,8 +60,40 @@ class ProfessorsController extends Controller
      */
     public function show($id)
     {
+        // Find the average scores for the professor
         $professor = Professor::find($id);
-        return view('professors.show')->with('professor', $professor);
+        $reviews = Review::get();
+        $aveScore = $qualityScore = null;
+        $overallScore = 0;
+        $personalityScore = 0;
+        $professionalismScore = 0;
+
+        // Custom function to find average scores
+        function averageScores($score, $referenced, $id) {
+            $count = 0;
+            $professor = Professor::find($id);
+            $reviews = Review::get();
+            foreach ($reviews as $review) {
+                if ($review->professor_id == $professor->id) {
+                    $score += $review->$referenced;
+                    $count += 1;
+                }
+            }
+            $score = $score / $count;
+            return $score;
+        }
+
+        $overallScore = averageScores($overallScore,'overall_score', $id);
+        $personalityScore = averageScores($personalityScore,'personality_score', $id);
+        $professionalismScore = averageScores($professionalismScore,'professionalism_score', $id);
+        $qualityScore = averageScores($qualityScore,'quality_score', $id);
+        
+        return view('professors.show')
+        ->with('professor', $professor)
+        ->with('reviews', $reviews)
+        ->with('overallScore', $overallScore)->with('personalityScore', $personalityScore)
+        ->with('professionalismScore', $professionalismScore)
+        ->with('qualityScore', $qualityScore);
     }
 
     /**

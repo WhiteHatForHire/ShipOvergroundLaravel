@@ -30,10 +30,10 @@
                     @endif
                 </div>
 
-                <p class="col s12">
+                {{-- <p class="col s12">
                   <input type="checkbox" id="remember" name="remember" />
                   <label for="remember">Remember Me</label>
-                </p>
+                </p> --}}
 
                 <div class="input-field col s12">
                     <button type="submit" class="btn waves-effect waves-light">Login</button>
