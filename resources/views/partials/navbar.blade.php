@@ -25,7 +25,7 @@
     <li><a onclick="event.preventDefault(); document.getElementById('logout-form').submit();" href="{{route('logout')}}">Logout</a></li>
   </ul>
 <nav>
-  <div class="nav-wrapper">
+  <div class="nav-wrapper light-blue darken-4">
     <div class="row">
         <a href="/" class="brand-logo">SHIP OVERGROUND</a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -56,7 +56,7 @@
 @else
 <nav>
   
-  <div class="nav-wrapper">
+  <div class="nav-wrapper light-blue darken-4">
     <a href="/" class="brand-logo">SHIP OVERGROUND</a>
     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     <ul class="right hide-on-med-and-down">

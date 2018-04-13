@@ -15,22 +15,17 @@
           <div class="section"></div>
 				  <a href="" id="professor_search_button" class="btn">Go</a>
           {{-- {!! Form::close() !!} --}}
+          <div class="autoInputAction" >
+            <div class="section hide"></div>
+            <h6 class="hide">Unable to find your professor?</h6>
+            <br>
+            <a href="/professors/create" class="hide waves-effect waves-light btn red darken-3"><i class="material-icons left">cloud</i>Add Professor</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-<div class="section"></div>
-<div class="section"></div>
-<div class="section"></div>
-<div class="section"></div>
-<div class="section"></div>
-<div class="section"></div>
-<div class="section"></div>
-<div class="section"></div>
-<div class="section"></div>
-<div class="section"></div>
-<div class="section"></div>
 
 
 <script type="text/javascript">

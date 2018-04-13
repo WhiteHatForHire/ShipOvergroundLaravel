@@ -1,7 +1,16 @@
-console.log('working');
-var foundProfessor;
 M.AutoInit();
 $(document).ready(function(){
+  var autoInput = document.querySelector('#autocomplete-input');
+  var autoInputAction = document.querySelector('.autoInputAction');
+  autoInput.addEventListener('focus', function() {
+    setTimeout(function() {
+      for (var i = 0; i < autoInputAction.children.length; i++) {
+        autoInputAction.children[i].classList.remove("hide");
+      }
+    },3000);
+  });
+  console.log(autoInput);
+  var foundProfessor
   // DROPDOWN LOGIC
   $('.dropdown-button').dropdown({
     inDuration: 300,
@@ -25,7 +34,7 @@ $(document).ready(function(){
       var professor_search_button = document.getElementById('professor_search_button');
       var currentProfessor;
       currentProfessor = val.split(', ');
-      var compareValue = profData.filter(p => p.first_name == currentProfessor[1])[0];
+      var compareValue = profData.filter(p => (p.first_name == currentProfessor[1]) && (p.last_name == currentProfessor[0]))[0];
       // Check to see if the selected string has a match in the data array then get that id
       if (currentProfessor[1] == compareValue.first_name && currentProfessor[0] == compareValue.last_name) {
         foundProfessor = compareValue;

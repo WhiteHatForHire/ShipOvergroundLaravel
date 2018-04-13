@@ -2,6 +2,37 @@
     font-size: 32px !important;
 }
 
+body {
+    background-image: url("/img/cub.jpeg");
+    background-position: center;
+}
+
+#mainBody {
+    background-image: url("/img/cub.jpeg") !important;
+    background-position: center !important;
+}
+
+#mainBody2 {
+    background-image: url("/img/cub.jpeg") !important;
+    background-position: top !important;
+}
+
+#mainBody3 {
+    background-image: url("/img/cub.jpeg") !important;
+    background-position: top !important;
+}
+
+.dropdown-content {
+    z-index: 1000 !important;
+}
+
+#landing {
+    background-image: url("/img/cub.jpeg");
+    background-position: center;
+}
+#redOpaque {
+    background-color: rgba(190, 0, 0, 0.9) !important;
+}
 #body {
     font-size: 20px !important;
 }

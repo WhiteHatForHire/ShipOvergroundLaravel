@@ -2,8 +2,11 @@
 
 @section('content')
 <div class="section"></div>
+<div class="section"></div>
+<div class="section"></div>
 <div class="row">
-    <div class="col s12 m10 l8 offset-m1 offset-l2">
+        <div class="col s12 m10 l4 offset-m1 offset-l4 card">
+        <div class="section"></div>
         <span class="flow-text">Register</span>
         <div class="divider"></div>
         <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
@@ -42,14 +45,13 @@
 
                 <div class="input-field col s12{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
                     <input id="password-confirm" type="password" class="validate" name="password_confirmation">
-                    <label>Confirm Password</label>
+                    <label for="password-confirm">Confirm Password</label>
                     @if ($errors->has('password_confirmation'))
                         <span class="help-block">
                             <strong>{{ $errors->first('password_confirmation') }}</strong>
                         </span>
                     @endif
                 </div>
-
                     <div class="input-field col s12">
                         <button type="submit" class="btn waves-effect waves-light">Register</button>
                         <p>
