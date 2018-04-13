@@ -1,6 +1,13 @@
 @extends('layouts.app') 
 @section('content')
-        <h1 class="center-align">REVIEWS</h1>
+<div class="section"></div>
+  <div class="row ">
+    <div class="col l4 m6 offset-m3 s12 offset-l4">
+      <div class="card center-align card-padded">
+          <h1 class="center-align">REVIEWS</h1>
+      </div>
+    </div>
+  </div>
   {{--  @foreach($reviews as $review)
 
 
