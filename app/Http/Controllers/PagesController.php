@@ -41,7 +41,11 @@ class PagesController extends Controller
             return view('pages.help');
     }
     public function donate() {
-        return view('pages.donate');
+        if (Auth()->user()){
+            return view('pages.donate');
+        } else {
+            return view('pages.index');
+        }
     }
 
 }
