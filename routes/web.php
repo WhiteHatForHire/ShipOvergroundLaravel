@@ -24,4 +24,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/myReviews', 'PagesController@myReviews');
 Route::get('reviews/create/{id}', 'ReviewsController@create');
 Route::get('/autocomplete', 'PagesController@autocomplete');
+Route::get('/help', 'PagesController@help');
 

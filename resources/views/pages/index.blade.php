@@ -11,7 +11,7 @@
           <div class="card-content center-align">
             <h1 class="center-align">Welcome, {{$user->name}}!</h1>
             <a href="/myReviews" class="waves-effect waves-light btn blue darken-3"><i class="material-icons left">mode_comment</i>My Reviews</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a class="waves-effect waves-light btn light-green accent-4"><i class="material-icons left">help</i>Help / FAQ</a>
+            <a href="/help" class="waves-effect waves-light btn light-green accent-4"><i class="material-icons left">help</i>Help / FAQ</a>
             <h6></h6>
           </div>
         </div>

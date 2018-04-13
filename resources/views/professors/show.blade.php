@@ -86,6 +86,35 @@
                     </div>
                   </div>
                 </a>
+                 <!-- Modal Structure -->
+          <div id="modal_review{{$review->id}}" class="modal">
+              <div class="modal-content">
+                <h4>{{$review->title}}</h4>
+                <p>{{$review->body}}</p>
+                <div class="">
+                  <h5>Quality: {{$review->quality_score}}</h5>
+                  @for($i = 0; $i < $review->quality_score; $i++)
+                  <i class="fas fa-star"></i>
+                  @endfor
+                  <h5>Personality: {{$review->personality_score}}</h5>
+                    @for($i = 0; $i < $review->personality_score; $i++)
+                      <i class="fas fa-star"></i>
+                    @endfor
+                  <h5>Professionalism: {{$review->professionalism_score}}</h5>
+                    @for($i = 0; $i < $review->professionalism_score; $i++)
+                      <i class="fas fa-star"></i>
+                    @endfor
+                  <h5>Overall: {{$review->overall_score}}</h5>
+                    @for($i = 0; $i < $review->overall_score; $i++)
+                      <i class="fas fa-star"></i>
+                    @endfor
+                  </div>
+              </div>
+              
+              <div class="modal-footer">
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Click outside to close</a>
+              </div>
+            </div>
       @endif
       @endforeach
             </div>

@@ -37,5 +37,12 @@ class PagesController extends Controller
             return view('pages.index');
         }
     }
+    public function help() {
+        if (Auth()->user()){
+            return view('pages.help');
+        } else {
+            return view('pages.index');
+        }
+    }
 
 }

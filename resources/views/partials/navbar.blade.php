@@ -27,7 +27,7 @@
 <nav>
   <div class="nav-wrapper light-blue darken-4">
     <div class="row">
-        <a href="/" class="brand-logo"></a>
+        <a href="/" class="brand-logo">&nbsp;&nbsp;<i class="fas fa-ship"></i>&nbsp;&nbsp;<i class="fas fa-ship"></i>&nbsp;&nbsp;<i class="fas fa-ship"></i></a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
           <li><a href="/autocomplete">Search</a></li>

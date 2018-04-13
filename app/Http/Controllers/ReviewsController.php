@@ -69,8 +69,43 @@ class ReviewsController extends Controller
         $review->overall_score = ($quality_score + $personality_score + $professionalism_score) / 3;
         $review->professor_id = $request->input('professor_id');
         $review->save();
+        $id = $review->professor_id;
 
-        return redirect('/reviews')->with('success', 'Review Created');
+        // Find the average scores for the professor
+        $professor = Professor::find($id);
+        $reviews = Review::get();
+        $aveScore = $professionalismScore = $qualityScore = $overallScore = $personalityScore = null;
+
+        // Custom function to find average scores
+        function averageScores($score, $referenced, $id) {
+            $count = 0;
+            $professor = Professor::find($id);
+            $reviews = Review::get();
+            foreach ($reviews as $review) {
+                if ($review->professor_id == $professor->id) {
+                    $score += $review->$referenced;
+                    $count += 1;
+                }
+            }
+            if ($score > 0) {
+                $score = $score / $count;
+                return $score;
+            } 
+            return;
+        }
+        
+        $overallScore = round(averageScores($overallScore,'overall_score', $id), 1);
+        $personalityScore = round(averageScores($personalityScore,'personality_score', $id), 1);
+        $professionalismScore = round(averageScores($professionalismScore,'professionalism_score', $id), 1);
+        $qualityScore = round(averageScores($qualityScore,'quality_score', $id), 1);
+        
+        return view('professors.show')
+        ->with('professor', $professor)
+        ->with('reviews', $reviews)
+        ->with('overallScore', $overallScore)
+        ->with('personalityScore', $personalityScore)
+        ->with('professionalismScore', $professionalismScore)
+        ->with('qualityScore', $qualityScore);
     }
 
     /**
