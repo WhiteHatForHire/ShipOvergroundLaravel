@@ -14,12 +14,12 @@ body {
 
 #mainBody2 {
     background-image: url("/img/cub.jpeg") !important;
-    background-position: top !important;
+    background-position: left !important;
 }
 
 #mainBody3 {
     background-image: url("/img/cub.jpeg") !important;
-    background-position: top !important;
+    background-position: right !important;
 }
 
 .dropdown-content {

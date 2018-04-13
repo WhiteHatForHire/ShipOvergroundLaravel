@@ -26,4 +26,16 @@ class PagesController extends Controller
         return view('pages.autocomplete')->with('professors', $professors);
     }
 
+    public function myReviews() {
+        if (Auth()->user()){
+            $user_id = Auth()->user()->id;
+            $user = User::find($user_id);
+            $reviews = Review::get();
+            return view('reviews.myReviews')->with('user', $user)
+            ->with('reviews', $reviews);
+        } else {
+            return view('pages.index');
+        }
+    }
+
 }

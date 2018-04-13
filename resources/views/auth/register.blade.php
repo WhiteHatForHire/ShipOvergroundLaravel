@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@section('body-name')
+<body id="mainBody3">
+@endsection
 @section('content')
 <div class="section"></div>
 <div class="section"></div>
