@@ -21,7 +21,6 @@
     <li class="divider" tabindex="-1"></li>
     <li class="divider" tabindex="-1"></li>
     <li class="divider" tabindex="-1"></li>
-    <li><a href="/">Profile</a></li>
     <li><a onclick="event.preventDefault(); document.getElementById('logout-form').submit();" href="{{route('logout')}}">Logout</a></li>
   </ul>
 <nav>
@@ -33,9 +32,12 @@
           <li><a href="/autocomplete">Search</a></li>
           {{-- <li><a href="/reviews">Reviews</a></li> --}}
           <li><a href="/professors">Professors</a></li>
+          <li><a href="/">Profile</a></li>
            <!-- Dropdown Trigger -->
       <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Account<i class="material-icons right">arrow_drop_down</i></a></li>
-        </ul>
+      <li><a href="/help">Help</a></li>
+        
+    </ul>
     </div>
    
   </div>
@@ -46,6 +48,7 @@
   <li><a href="/autocomplete">Search</a></li>
   <li><a href="/professors">Professors</a></li>
   <li><a href="/">Profile</a></li>
+  <li><a href="/help">Help / FAQ</a></li>
   <li><a onclick="event.preventDefault(); document.getElementById('logout-form').submit();" href="{{route('logout')}}">Logout</a></li>
 </ul>
 
@@ -58,7 +61,7 @@
 <nav>
   
   <div class="nav-wrapper light-blue darken-4">
-    <a href="/" class="brand-logo">SHIP OVERGROUND</a>
+    <a href="/" class="brand-logo">&nbsp;&nbsp;<i class="fas fa-ship"></i>&nbsp;&nbsp;<i class="fas fa-ship"></i>&nbsp;&nbsp;<i class="fas fa-ship"></i></a>
     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     <ul class="right hide-on-med-and-down">
       <li><a href="/login">Login</a></li>

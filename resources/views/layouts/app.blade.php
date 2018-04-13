@@ -8,6 +8,7 @@
     <title>{{ config('app.name', 'Ship-Overground') }}</title>
     <!-- Styles -->
     <!-- Compiled and minified CSS -->
+    <script src="https://js.stripe.com/v3/"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
@@ -28,7 +29,6 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
-      
     
     <!-- Compiled and minified JavaScript -->
   </body>

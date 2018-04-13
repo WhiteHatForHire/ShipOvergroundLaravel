@@ -25,4 +25,5 @@ Route::get('/myReviews', 'PagesController@myReviews');
 Route::get('reviews/create/{id}', 'ReviewsController@create');
 Route::get('/autocomplete', 'PagesController@autocomplete');
 Route::get('/help', 'PagesController@help');
+Route::get('/donate', 'PagesController@donate');
 
