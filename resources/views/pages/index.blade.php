@@ -33,7 +33,7 @@
                   <a href="/login" class="hoverable waves-effect waves-light btn blue darken-4"><i class="material-icons left">face</i>Login&nbsp;&nbsp;&nbsp;&nbsp;</a> &nbsp;&nbsp;&nbsp;&nbsp;
                   <a href="/register" class="hoverable waves-effect waves-light btn black"><i class="material-icons left">group_add</i>Register</a> 
                   <div class="section"></div>
-                  <a href="/help" target="_blank" class="hoverable waves-effect waves-light btn green"><i class="material-icons left">help</i>Help / FAQ</a>
+                  <a href="/help" class="hoverable waves-effect waves-light btn green"><i class="material-icons left">help</i>Help / FAQ</a>
                   <div class="section"></div>
                 </div>
               </div>

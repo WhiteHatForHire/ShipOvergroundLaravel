@@ -7,7 +7,7 @@ $(document).ready(function(){
       for (var i = 0; i < autoInputAction.children.length; i++) {
         autoInputAction.children[i].classList.remove("hide");
       }
-    },3000);
+    },0);
   });
   console.log(autoInput);
   var foundProfessor
