@@ -2,6 +2,52 @@
     font-size: 32px !important;
 }
 
+.card-padded {
+    padding: 30px !important;
+}
+
+#rev-margin {
+    margin-top: -46px !important;
+}
+
+
+
+
+.blueOpaque {
+    background-color: rgba(0, 137, 224, 0.5)
+}
+
+body {
+    background-image: url("/img/cub.jpeg");
+    background-position: center;
+}
+
+#mainBody {
+    background-image: url("/img/cub.jpeg") !important;
+    background-position: center !important;
+}
+
+#mainBody2 {
+    background-image: url("/img/cub.jpeg") !important;
+    background-position: left !important;
+}
+
+#mainBody3 {
+    background-image: url("/img/cub.jpeg") !important;
+    background-position: right !important;
+}
+
+.dropdown-content {
+    z-index: 1000 !important;
+}
+
+#landing {
+    background-image: url("/img/cub.jpeg");
+    background-position: center;
+}
+#redOpaque {
+    background-color: rgba(190, 0, 0, 0.9) !important;
+}
 #body {
     font-size: 20px !important;
 }
@@ -12,8 +58,37 @@
     font-size: 20px;
 }
 
-/* .grid-item { width: 200px; } */
+/* .dropdown-content {
+    background-color: #FFFFFF;
+    margin: 0;
+    display: none;
+    min-width: 30px; 
+    max-height: auto;
+    margin-left: -1px; 
+    overflow: hidden;
+    opacity: 0;
+    position: absolute;
+    white-space: nowrap;
+    z-index: 1;
+    will-change: width, height;
+  } */
 
-#reviews_grid {
-    margin-left: 20px;
+@media screen and (max-width: 1300px) {
+    .fa-star {
+        font-size: 10px;
+    }
 }
+
+@media screen and (max-width: 992px) {
+    .fa-star {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .fa-star {
+        font-size: 20px;
+    }
+}
+
+ 

@@ -3,26 +3,43 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-// Include Storage Library
-use Illuminate\Support\Facades\Storage;
-// Bring in the models from Post.php
+// Optional DB library
+use DB;
 use App\Review;
 use App\Professor;
 
-// Optional DB library
-use DB;
 
-class ReviewsController extends Controller
+class ProfessorsController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index() {
+        $professors = Professor::orderBy('created_at', 'desc')->get();
+        return view ('professors.index')->with('professors', $professors);
+        
+    }
+
+    public function store(Request $request)
     {
-        $reviews = Review::orderBy('created_at', 'desc')->get();
-        return view ('reviews.index')->with('reviews', $reviews);
+        // return view ('reviews.create');
+        $this->validate($request, [
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'professor_email' => 'required'
+        ]);
+
+        // Create Review
+        $professor = new Professor;
+        $professor->first_name = $request->input('first_name');
+        $professor->last_name = $request->input('last_name');
+        $professor->professor_email = $request->input('professor_email');
+        $professor->department = $request->input('department');
+        $professor->save();
+
+        return redirect('/professors')->with('success', 'Professor Created');
     }
 
     /**
@@ -30,47 +47,19 @@ class ReviewsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($id)
+    public function create()
     {
-        $professor = Professor::find($id);
-        $professors = Professor::get();
-        return view('reviews.create')->with('professor', $professor)->with('professors', $professors);
+        return view('professors.create');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Display the specified resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function show($id)
     {
-        // return view ('reviews.create');
-        $this->validate($request, [
-            'title' => 'required',
-            'body' => 'required',
-            'quality_score' => 'required',
-            'personality_score' => 'required',
-            'professionalism_score' => 'required',
-        ]);
-
-        // Create Review
-        $review = new Review;
-        $quality_score = $request->input('quality_score');
-        $personality_score = $request->input('personality_score');
-        $professionalism_score = $request->input('professionalism_score');
-        $qualityScore = $request->input('qualityScore');
-        $review->title = $request->input('title');
-        $review->body = $request->input('body');
-        $review->quality_score = $quality_score;
-        $review->personality_score = $personality_score;
-        $review->professionalism_score = $professionalism_score;
-        $review->user_id = auth()->user()->id;
-        $review->overall_score = ($quality_score + $personality_score + $professionalism_score) / 3;
-        $review->professor_id = $request->input('professor_id');
-        $review->save();
-        $id = $review->professor_id;
-
         // Find the average scores for the professor
         $professor = Professor::find($id);
         $reviews = Review::get();
@@ -109,17 +98,6 @@ class ReviewsController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -152,4 +130,8 @@ class ReviewsController extends Controller
     {
         //
     }
+
+   
+    
+
 }

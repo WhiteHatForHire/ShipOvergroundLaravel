@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class Review extends Model
 {
      // Table Name (default is plural of class name aka Post = posts)
@@ -13,7 +14,13 @@ class Review extends Model
      // Timestamps (default is true)
      public $timestamps = true;
 
-     public function user() {
+    public function user() {
         return $this->belongsTo('App\User');
     }
+
+    public function professor() {
+        return $this->belongsTo('App\Professor');
+    }
+
+    
 }

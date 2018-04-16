@@ -12,6 +12,18 @@
 */
 
 Route::get('/', 'PagesController@index');
-Route::get('/reviews', 'ReviewsController@index');
-Route::get('/create', 'ReviewsController@create');
-Route::post('/store', 'ReviewsController@store');
+
+// Link to reviews controller
+Route::resource('reviews', 'ReviewsController');
+Route::resource('professors', 'ProfessorsController');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/myReviews', 'PagesController@myReviews');
+Route::get('reviews/create/{id}', 'ReviewsController@create');
+Route::get('/autocomplete', 'PagesController@autocomplete');
+Route::get('/help', 'PagesController@help');
+Route::get('/donate', 'PagesController@donate');
+

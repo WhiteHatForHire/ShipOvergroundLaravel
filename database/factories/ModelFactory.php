@@ -24,12 +24,23 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 });
 $factory->define(App\Review::class, function (Faker\Generator $faker) {
     return [
-        'qualityScore' => $faker->name,
-        'personalityScore' => $faker->numberBetween($min = 1, $max = 10),
-        'professionalismScore' => $faker->numberBetween($min = 1, $max = 10),
-        'qualityScore' => $faker->numberBetween($min = 1, $max = 10),
+        'quality_score' => $faker->name,
+        'user_id' => 2,
+        'professor_id' => 2,
+        'personality_score' => $faker->numberBetween($min = 1, $max = 10),
+        'professionalism_score' => $faker->numberBetween($min = 1, $max = 10),
+        'quality_score' => $faker->numberBetween($min = 1, $max = 10),
         'body'=> $faker->paragraph($nbSentences = 3, $variableNbSentences = true),
         'title'=> $faker->word,
-        'overallScore'=> 5,
+        'overall_Score'=> rand (1, 10),
+    ];
+});
+
+$factory->define(App\Professor::class, function (Faker\Generator $faker) {
+    return [
+        'first_name' => $faker->firstNameMale,
+        'last_name' => $faker->lastName,
+        'professor_email' => $faker->freeEmail,
+        'department' => $faker->jobTitle
     ];
 });

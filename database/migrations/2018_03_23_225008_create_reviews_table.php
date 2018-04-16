@@ -15,12 +15,14 @@ class CreateReviewsTable extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id');
+            $table->integer('professor_id');
             $table->char('title', 150);
             $table->text('body');
-            $table->float('overallScore', 3, 2);
-            $table->integer('qualityScore');
-            $table->integer('personalityScore');
-            $table->integer('professionalismScore');
+            $table->float('overall_score', 4, 2);
+            $table->integer('quality_score');
+            $table->integer('personality_score');
+            $table->integer('professionalism_score');
             $table->timestamps();
         });
     }
