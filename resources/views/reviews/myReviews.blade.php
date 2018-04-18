@@ -14,10 +14,10 @@
             <!-- Modal Trigger -->
             <a class="modal-trigger" href="#modal_review{{$review->id}}">
                 <div class="col s12 m6 l3">
-                  @if($review->overall_score >= 7)
+                  @if($review->overall_score > 7)
                   <div class="card hoverable green darken-2">
                     <div class="card-content white-text">
-                      @elseif($review->overall_score >= 4 && $review->overall_score <= 6 )
+                      @elseif($review->overall_score >= 4 && $review->overall_score <= 7 )
                       <div class="card hoverable lime accent-2">
                         <div class="card-content black-text">
                           @elseif($review->overall_score < 4)
@@ -64,7 +64,11 @@
                       @endfor
                     </div>
                     <div class="section"></div>
+                    {!!Form::open(['action' => ['ReviewsController@destroy', $review->id], 'method' => 'POST', 'class' => ''])!!}
                     <a href="/reviews/{{$review->id}}/edit" class="waves-effect waves-light btn">Edit</a>
+                    {{Form::hidden('_method', 'DELETE')}}
+                      {{Form::submit('Delete', ['class' => 'red btn'])}}
+                    {!!Form::close()!!}
                   </div>
                   
                   <div class="modal-footer">

@@ -39,7 +39,7 @@ class ProfessorsController extends Controller
         $professor->department = $request->input('department');
         $professor->save();
 
-        return redirect('/professors')->with('success', 'Professor Created');
+        return redirect('/professors')->with('successMsg', 'Professor Created');
     }
 
     /**

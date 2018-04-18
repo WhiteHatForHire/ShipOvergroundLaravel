@@ -29,7 +29,7 @@
                         <h6>Reading Other Reviews</h6>
                         <div class="divider"></div>
                         <span><i class="tiny material-icons">check</i>	Step 1: Search for a professor</span><br>
-                        <span><i class="tiny material-icons">check</i>	Step 2: The reviews written by other students are on the professor's page</span><br>
+                        <span><i class="tiny material-icons">check</i>	Step 2: The reviews written by other students are on the professor's page</span><br><br>
                         <h6>Viewing Professor's Pages</h6>
                         <div class="divider"></div>
                         <span><i class="tiny material-icons">check</i>	Step 1: Search for a professor</span><br>

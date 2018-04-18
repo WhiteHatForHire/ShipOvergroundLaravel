@@ -60,10 +60,10 @@
       @if($review->professor_id == $professor->id)
         <a class="modal-trigger" href="#modal_review{{$review->id}}">
           <div class="col s12 l6">
-            @if($review->overall_score >= 7)
+            @if($review->overall_score > 7)
             <div class="card hoverable green darken-2">
               <div class="card-content white-text">
-                @elseif($review->overall_score >= 4 && $review->overall_score <= 6 )
+                @elseif($review->overall_score >= 4 && $review->overall_score <= 7 )
                 <div class="card hoverable lime accent-2">
                   <div class="card-content black-text">
                     @elseif($review->overall_score < 4)

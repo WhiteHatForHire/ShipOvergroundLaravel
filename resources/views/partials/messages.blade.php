@@ -33,4 +33,29 @@
     </div>
   </div>
 @endif
+
+@if(!empty($errorMsg))
+<div class="row">
+  <div class="col s12">
+    <div class="alert_card card red">
+      <div class="card-content white-text">
+        {{$errorMsg}}
+      </div>
+    </div>
+  </div>
+</div>
+@endif
+@if(!empty($successMsg))
+<div class="row">
+  <div class="col s12">
+    <div class="alert_card card green">
+      <div class="card-content white-text">
+        {{$successMsg}}
+      </div>
+    </div>
+  </div>
+</div>
+@endif
+
+
 </div>

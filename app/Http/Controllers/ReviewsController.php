@@ -107,7 +107,7 @@ class ReviewsController extends Controller
         ->with('personalityScore', $personalityScore)
         ->with('professionalismScore', $professionalismScore)
         ->with('qualityScore', $qualityScore)
-        ->with('success', 'review created');
+        ->with('successMsg', 'review created');
     }
 
     /**
@@ -126,7 +126,7 @@ class ReviewsController extends Controller
         // Check for correct user
         if(auth()->user()->id != $review->user_id) {
             return view('reviews.myReviews')
-            ->with('error', 'Unauthorized Page')
+            ->with('errorMsg', 'Unauthorized Page')
             ->with('user', $user)
             ->with('reviews', $reviews);
         }
@@ -152,7 +152,7 @@ class ReviewsController extends Controller
         // Check for correct user
         if(auth()->user()->id != $review->user_id) {
             return view('reviews.myReviews')
-            ->with('error', 'Unauthorized Page')
+            ->with('errorMsg', 'Unauthorized Page')
             ->with('user', $user)
             ->with('reviews', $reviews);
         }
@@ -204,7 +204,7 @@ class ReviewsController extends Controller
         return view('reviews.myReviews')
         ->with('user', $user)
         ->with('reviews', $reviews)
-        ->with('success', 'Review Updated');
+        ->with('successMsg', 'Review Updated');
     }
 
     /**
@@ -215,6 +215,17 @@ class ReviewsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user_id = Auth()->user()->id;
+        $user = User::find($user_id);
+        $reviews = Review::get();
+        $review = DB::table('reviews')->where('id', $id);
+
+
+        $review->delete();
+
+        return redirect('/autocomplete')
+        ->with('error', 'Review Deleted')
+        ->with('user', $user)
+        ->with('reviews', $reviews);;
     }
 }
