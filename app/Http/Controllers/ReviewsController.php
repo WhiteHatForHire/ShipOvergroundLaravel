@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 // Bring in the models from Post.php
 use App\Review;
+use App\User;
 use App\Professor;
 
 // Optional DB library
@@ -105,7 +106,8 @@ class ReviewsController extends Controller
         ->with('overallScore', $overallScore)
         ->with('personalityScore', $personalityScore)
         ->with('professionalismScore', $professionalismScore)
-        ->with('qualityScore', $qualityScore);
+        ->with('qualityScore', $qualityScore)
+        ->with('success', 'review created');
     }
 
     /**
@@ -116,7 +118,21 @@ class ReviewsController extends Controller
      */
     public function show($id)
     {
-        //
+        $user_id = Auth()->user()->id;
+        $user = User::find($user_id);
+        $review = Review::find($id);
+        $reviews = Review::get();
+
+        // Check for correct user
+        if(auth()->user()->id != $review->user_id) {
+            return view('reviews.myReviews')
+            ->with('error', 'Unauthorized Page')
+            ->with('user', $user)
+            ->with('reviews', $reviews);
+        }
+
+        return view('reviews.show')
+        ->with('review', $review);
     }
 
     /**
@@ -127,7 +143,23 @@ class ReviewsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user_id = Auth()->user()->id;
+        $user = User::find($user_id);
+        $review = Review::find($id);
+        $reviews = Review::get();
+        $professor = Professor::find($user_id);
+
+        // Check for correct user
+        if(auth()->user()->id != $review->user_id) {
+            return view('reviews.myReviews')
+            ->with('error', 'Unauthorized Page')
+            ->with('user', $user)
+            ->with('reviews', $reviews);
+        }
+
+        return view('reviews.edit')
+        ->with('review', $review)
+        ->with('professor', $professor);
     }
 
     /**
@@ -139,7 +171,40 @@ class ReviewsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user_id = Auth()->user()->id;
+        $user = User::find($user_id);
+        $review = Review::find($id);
+        $reviews = Review::get();
+        $professor = Professor::find($user_id);
+         // return view ('reviews.create');
+         $this->validate($request, [
+            'title' => 'required',
+            'body' => 'required',
+            'quality_score' => 'required',
+            'personality_score' => 'required',
+            'professionalism_score' => 'required',
+        ]);
+
+        // Create Review
+        $quality_score = $request->input('quality_score');
+        $personality_score = $request->input('personality_score');
+        $professionalism_score = $request->input('professionalism_score');
+        $qualityScore = $request->input('qualityScore');
+        $review->title = $request->input('title');
+        $review->body = $request->input('body');
+        $review->quality_score = $quality_score;
+        $review->personality_score = $personality_score;
+        $review->professionalism_score = $professionalism_score;
+        $review->user_id = auth()->user()->id;
+        $review->overall_score = ($quality_score + $personality_score + $professionalism_score) / 3;
+        $review->professor_id = $request->input('professor_id');
+        $review->save();
+        $id = $review->professor_id;
+
+        return view('reviews.myReviews')
+        ->with('user', $user)
+        ->with('reviews', $reviews)
+        ->with('success', 'Review Updated');
     }
 
     /**

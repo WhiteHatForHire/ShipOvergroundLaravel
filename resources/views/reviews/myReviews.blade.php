@@ -63,6 +63,8 @@
                       <i class="fas fa-star"></i>
                       @endfor
                     </div>
+                    <div class="section"></div>
+                    <a href="/reviews/{{$review->id}}/edit" class="waves-effect waves-light btn">Edit</a>
                   </div>
                   
                   <div class="modal-footer">
