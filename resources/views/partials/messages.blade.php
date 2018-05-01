@@ -14,7 +14,7 @@
 @if(session('success'))
 <div class="row">
     <div class="col s12">
-      <div class="alert_card card green">
+      <div id="absolute" class="alert_card card green">
         <div class="card-content white-text">
           {{session('success')}}
         </div>
@@ -25,7 +25,7 @@
 @endif @if(session('error'))
 <div class="row">
     <div class="col s12">
-      <div class="alert_card card red">
+      <div id="absolute" class="alert_card card red">
         <div class="card-content white-text">
           {{session('error')}}
         </div>
@@ -37,7 +37,7 @@
 @if(!empty($errorMsg))
 <div class="row">
   <div class="col s12">
-    <div class="alert_card card red">
+    <div id="absolute" class="alert_card card red">
       <div class="card-content white-text">
         {{$errorMsg}}
       </div>
@@ -48,7 +48,7 @@
 @if(!empty($successMsg))
 <div class="row">
   <div class="col s12">
-    <div class="alert_card card green">
+    <div id="absolute" class="alert_card card green">
       <div class="card-content white-text">
         {{$successMsg}}
       </div>

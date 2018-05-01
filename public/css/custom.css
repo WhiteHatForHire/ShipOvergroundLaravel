@@ -57,6 +57,13 @@ body {
     margin-top: 0 !important;
     font-size: 20px;
 }
+#absolute {
+    position: absolute !important;
+    left: 20px;
+    right: 20px;
+    margin-top: 5px !important;
+    z-index: 100;
+}
 
 /* .dropdown-content {
     background-color: #FFFFFF;

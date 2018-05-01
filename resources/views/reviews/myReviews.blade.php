@@ -7,7 +7,7 @@
           <h2>My Reviews</h2>
         </div>
       </div>
-        <div class="row" id="reviews_grid">
+      <div class="row" id="reviews_grid">
             @foreach($reviews as $review)
             @if ($review->user_id == $user->id)
             {{--  materialize cards  --}}
@@ -77,6 +77,7 @@
                 </div>
                 @endif
                 @endforeach
+            
               </div>
     </div>
 
