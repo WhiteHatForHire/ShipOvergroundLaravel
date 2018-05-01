@@ -120,19 +120,31 @@ class ReviewsController extends Controller
     {
         $user_id = Auth()->user()->id;
         $user = User::find($user_id);
-        $review = Review::find($id);
         $reviews = Review::get();
+        $review = DB::table('reviews')->where('id', $id);
 
-        // Check for correct user
-        if(auth()->user()->id != $review->user_id) {
-            return view('reviews.myReviews')
-            ->with('errorMsg', 'Unauthorized Page')
-            ->with('user', $user)
-            ->with('reviews', $reviews);
-        }
 
-        return view('reviews.show')
-        ->with('review', $review);
+        $review->delete();
+
+        return redirect('/autocomplete')
+        ->with('error', 'Review Deleted')
+        ->with('user', $user)
+        ->with('reviews', $reviews);
+        // $user_id = Auth()->user()->id;
+        // $user = User::find($user_id);
+        // $review = Review::find($id);
+        // $reviews = Review::get();
+
+        // // Check for correct user
+        // if(auth()->user()->id != $review->user_id) {
+        //     return view('reviews.myReviews')
+        //     ->with('errorMsg', 'Unauthorized Page')
+        //     ->with('user', $user)
+        //     ->with('reviews', $reviews);
+        // }
+
+        // return view('reviews.show')
+        // ->with('review', $review);
     }
 
     /**
@@ -147,7 +159,7 @@ class ReviewsController extends Controller
         $user = User::find($user_id);
         $review = Review::find($id);
         $reviews = Review::get();
-        $professor = Professor::find($user_id);
+        $professor = Professor::find($review->professor_id);
 
         // Check for correct user
         if(auth()->user()->id != $review->user_id) {
@@ -175,7 +187,7 @@ class ReviewsController extends Controller
         $user = User::find($user_id);
         $review = Review::find($id);
         $reviews = Review::get();
-        $professor = Professor::find($user_id);
+        $professor = Professor::find($review->professor_id);
          // return view ('reviews.create');
          $this->validate($request, [
             'title' => 'required',
@@ -201,7 +213,7 @@ class ReviewsController extends Controller
         $review->save();
         $id = $review->professor_id;
 
-        return view('reviews.myReviews')
+        return view('pages.index')
         ->with('user', $user)
         ->with('reviews', $reviews)
         ->with('successMsg', 'Review Updated');
@@ -223,9 +235,9 @@ class ReviewsController extends Controller
 
         $review->delete();
 
-        return redirect('/autocomplete')
+        return redirect('/')
         ->with('error', 'Review Deleted')
         ->with('user', $user)
-        ->with('reviews', $reviews);;
+        ->with('reviews', $reviews);
     }
 }

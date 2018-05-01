@@ -66,7 +66,7 @@
                     <div class="section"></div>
                     {!!Form::open(['action' => ['ReviewsController@destroy', $review->id], 'method' => 'POST', 'class' => ''])!!}
                     <a href="/reviews/{{$review->id}}/edit" class="waves-effect waves-light btn">Edit</a>
-                    {{Form::hidden('_method', 'DELETE')}}
+                      {{Form::hidden('_method', 'DELETE')}}
                       {{Form::submit('Delete', ['class' => 'red btn'])}}
                     {!!Form::close()!!}
                   </div>
